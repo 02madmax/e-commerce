@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
         { model: Tag, through: ProductTag }
       ]
     })
+    // this .then promise returns the data from the databases
+    .then((product) => { res.json(product) })
+    .catch((err) => { res.json(err) })
 });
 
 // get one product
@@ -28,6 +31,8 @@ router.get('/:id', (req, res) => {
         { model: Tag, through: ProductTag }
       ]
     })
+    .then((product) => { res.json(product) })
+    .catch((err) => { res.json(err) })
 });
 
 // create new product
