@@ -41,6 +41,8 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
+  .then((category) => { res.json(category) })
+  .catch((err) => { res.json(err) })
 });
 
 router.delete('/:id', (req, res) => {
@@ -50,6 +52,8 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
+  .then((category) => { res.json(category) })
+  .catch((err) => { res.json(err) })
 });
 
 module.exports = router;
